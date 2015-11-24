@@ -6,7 +6,7 @@ class Movie < ActiveRecord::Base
   validates :description, presence: true
   validates :poster_image_url, presence: true
   validates :release_date, presence: true
-  validates :release_date_is_in_the_past
+  validate :release_date_is_in_the_past
 
   protected
 
@@ -15,5 +15,5 @@ class Movie < ActiveRecord::Base
       errors.add(:release_date, "should be in the past") if release_date > Date.today
     end
   end
-  
+
 end

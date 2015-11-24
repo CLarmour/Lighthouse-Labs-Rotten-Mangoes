@@ -1,4 +1,15 @@
 <%= form_for @movie do |t| %>
+  <% if @movie.errors.any? %>
+    <div> 
+      <%= pluralize(@movie.errors.count, "error") %> prevented this movie from being accepted:
+      <ul>
+        <% @movie.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
   <div>
     <%= t.label :title %><br>
     <%= t.text_field :title %>
