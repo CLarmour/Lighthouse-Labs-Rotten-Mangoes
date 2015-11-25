@@ -1,6 +1,6 @@
 <h1>Sign up!</h1>
 <%= form_for @user do |t| %>
-  <$ if @user.errors.any? %>
+  <% if @user.errors.any? %>
     <div>
       <%= pluralize(@user.errors.count, "error") %> prevented your sign up:
       <ul>
@@ -11,20 +11,22 @@
     </div>
   <% end %>
   <div>
-    <%= t.label :email %><br>
-    <%= t.text_field :email %>
+    <%= t.label "email" %><br>
+    <%= t.text_field "email" %>
   </div>
   <div>
-    <%= t.label :firstname, "First Name" %><br>
-    <%= t.text_field :firstname %>
+    <%= t.label "firstname", "First Name" %><br>
+    <%= t.text_field "firstname" %>
   </div>
   <div>
-    <%= t.label :lastname, "Last Name" %><br>
-    <%= t.text_field :lastname %>
+    <%= t.label "lastname", "Last Name" %><br>
+    <%= t.text_field "lastname" %>
   </div>
   <div>
-    <%= t.label :password_confirmation %><br>
-    <%= t.password_field :password_confirmation %>
+    <%= t.label "password_confirmation" %><br>
+    <%= t.password_field "password_confirmation" %>
   </div>
   <div><%= t.submit "Submit" %></div>
+
 <% end %>
+
