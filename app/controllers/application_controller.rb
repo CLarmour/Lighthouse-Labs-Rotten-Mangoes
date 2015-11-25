@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def restricted_access
+  def restrict_access
     if !current_user
       flash[:alert] = "Please log in."
       redirect_to new_session_path
