@@ -1,9 +1,11 @@
-<%= link_to "Back to all the movies", movies_path %><br/>
+<%= link_to "Back to all them movies, dawg", movies_path %><br/>
+<hr>
 
+<%= image_tag @movie.image_url.to_s %>
 <%= link_to image_tag(@movie.poster_image_url), movie_path(@movie) %>
 <h2><%= @movie.title %> (<%= link_to "Edit", edit_movie_path(@movie) %>, <%= link_to "Delete", movie_path(@movie), method: :delete, confirm: "You sure you want to do that?" %>)</h2>
-<h3><%= @movie.release_date %></h3>
-<h4>Dir. <%= @movie.director %> | <%= @movie.runtime_in_minutes %> minutes</h4>
+<h3><%= formatted_date(@movie.release_date) %></h3>
+<h4>Director: <%= @movie.director %> | Length: <%= @movie.runtime_in_minutes %> minutes</h4>
 <p><%= @movie.description %></p>
 
 <hr>
