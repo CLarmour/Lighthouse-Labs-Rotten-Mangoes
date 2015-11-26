@@ -45,5 +45,7 @@ group :development do
   gem 'spring'
 
   gem "carrierwave"
+
+  gem 'kaminari'
 end
 

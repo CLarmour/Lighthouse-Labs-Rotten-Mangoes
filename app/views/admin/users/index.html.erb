@@ -1,0 +1,11 @@
+<h1>Current Users</h1>
+<%= link_to "Back to movies", movies_path %>
+<%= paginate @users %>
+
+<% @users.each do |user| %>
+  <p><strong>Name:</strong> <%= user.full_name %></p>
+  <p><strong>Email:</strong> <%= user.email %></p>
+  <%= link_to "Remove this user from database", admin_user_path(user), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary"%>
+  <hr>
+<% end %>
+

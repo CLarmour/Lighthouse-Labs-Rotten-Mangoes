@@ -12,6 +12,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def restrict_admin_access
+    if current_user && !current_user.roles.include?("admin")
+      flash[:alert] = "You aren't an admin, sorry"
+      redirect_to new_session_path
+    end
+  end
+
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
