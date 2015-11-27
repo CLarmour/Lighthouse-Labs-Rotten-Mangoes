@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def new
     @user = User.new
   end
@@ -18,6 +19,14 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :firstname, :lastname, :password, :password_confirmation)
+  end
+
+  def admin?
+    User.find(session[:user_id]).admin
+  end
+
+  def admin_redirect
+    redirect_to admin_users_path, notice: "User created" if admin?
   end
 
 end

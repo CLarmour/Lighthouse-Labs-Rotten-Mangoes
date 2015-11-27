@@ -1,0 +1,5 @@
+<% if current_user && current_user.roles && current_user.roles.include?("admin") %>
+  <div>
+    <%= link_to "Admin", admin_users_path %>
+  </div>
+<% end %>

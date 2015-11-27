@@ -7,4 +7,5 @@ class Review < ActiveRecord::Base
   validates :text, presence: true
   validates :rating_out_of_ten, numericality: { greater_than_or_equal_to: 1 }
   validates :rating_out_of_ten, numericality: { less_than_or_equal_to: 10 }
+  validates :rating_out_of_ten, numericality: { only_integer: true }
 end

@@ -1,7 +1,8 @@
 <footer>
+
   <small>
     <% if current_user %>
-      Signed in as <%= current_user.full_name %> (<% link_to "log out", session_path("current"), method: :Delete %>)
+      Signed in as <%= current_user.full_name %>. (Not you? <%= link_to "Log out", "/session/#{current_user.id}", method: :delete %>. Or head into the <%= link_to "Admin area", "/admin/users" %>).
     <% else %>
       <%= link_to "Log in", new_session_path %> | <%= link_to "Sign up", new_user_path %>
     <% end %>
