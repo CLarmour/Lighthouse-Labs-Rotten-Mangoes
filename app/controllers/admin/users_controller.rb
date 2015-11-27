@@ -9,10 +9,10 @@ class Admin::UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    # UserMailer.deleted_user_email(@user).deliver_now
+    UserMailer.deleted_user_email(@user).deliver
 
     @user.destroy
-    redirect_to admin_users_path
+    redirect_to admin_users_path, "Deleted"
   end
 
   protected

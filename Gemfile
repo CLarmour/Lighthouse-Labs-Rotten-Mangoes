@@ -47,5 +47,6 @@ group :development do
   gem "carrierwave"
 
   gem 'kaminari'
+
 end
 
