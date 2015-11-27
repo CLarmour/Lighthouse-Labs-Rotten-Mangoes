@@ -1,0 +1,17 @@
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:title_or_director, "Search by title or director:") %>
+  <br>
+  <%= text_field_tag :title_or_director %>
+  <br>
+  <br>
+  <%= label_tag(:runtime_in_minutes, "Runtime:") %>
+  <br>
+  <select name="runtime_in_minutes">
+    <option value="89">Under 90 minutes</option>
+    <option value="90">Between 90 and 120 minutes</option>
+    <option value="121">Over 120 minutes</option>
+  </select>
+  <br>
+  <br>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>

@@ -1,35 +1,12 @@
-
 <h1>Movies, Reviews, and Users Oh my!</h1>
+
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
 
 <h3>Search For A Movie</h3>
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:title_or_director, "Search by title or director:") %>
-  <br>
-  <%= text_field_tag :title_or_director %>
-  <br>
-  <br>
-  <%= label_tag(:runtime_in_minutes, "Runtime:") %>
-  <br>
-  <select name="runtime_in_minutes">
-    <option value="89">Under 90 minutes</option>
-    <option value="90">Between 90 and 120 minutes</option>
-    <option value="121">Over 120 minutes</option>
-  </select>
-  <br>
-  <br>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+
+<%= render 'search' %>
+
 <hr>
 
-<% @movies.each do |movie| %>
-  <%= image_tag movie.image_url.to_s %>
-  <%= link_to image_tag(movie.poster_image_url), movie_path(movie) %>
-  <h2><%= link_to movie.title, movie_path(movie) %></h2>
-  <h3><%= formatted_date(movie.release_date) %></h3>
-  <h4>Director: <%= movie.director %> | Length: <%= movie.runtime_in_minutes %> minutes</h4>
-  <p><%= movie.description %> </p>
-  <%= movie.review_average %>/10
-  <hr>
-<% end %>
+<%= render 'movie' %>
