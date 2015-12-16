@@ -1,27 +1,10 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+>Created this mock app of the infamous 'Rotten Tomatoes' app using Rails 4.2.5.
 
-Things you may want to cover:
+>Used Bcrypt for securing users' passwords, used SQLite3 for database.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+>To deploy, run 'bundle exec rails s -b 0.0.0.0' from directory, and visit 'localhost:3000' in your browser.
 
 
 Please feel free to use a different markup language if you do not plan to run
