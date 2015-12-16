@@ -9,7 +9,20 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
+
  *= require_tree .
  *= require_self
  */
+h1 {
+  text-align: center;
+  font-family: Garamond;
+}
+
+#container {
+  text-align: center;
+  font-family: Garamond;
+}
+
+.image_edit {
+  border-radius: 20px;
+}
