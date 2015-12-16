@@ -44,17 +44,19 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  gem "carrierwave"
 
-  gem 'kaminari'
-
-  gem 'bootstrap-sass'
 
 end
 
 group :production do
   gem 'rails_12factor'
 end
+
+  gem "carrierwave"
+
+  gem 'kaminari'
+
+  gem 'bootstrap-sass'
 
 ruby "2.1.3"
 
