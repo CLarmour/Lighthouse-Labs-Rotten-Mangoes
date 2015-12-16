@@ -48,5 +48,7 @@ group :development do
 
   gem 'kaminari'
 
+  gem 'bootstrap-sass'
+
 end
 
